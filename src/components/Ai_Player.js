@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const AiPlayer = ({ currentPlayer, handleCellClick }) => {
+const AIPlayer = ({ currentPlayer, handleCellClick }) => {
   useEffect(() => {
     if (currentPlayer === 2) {
       const randomColumnIndex = Math.floor(Math.random() * 7);
@@ -11,4 +11,4 @@ const AiPlayer = ({ currentPlayer, handleCellClick }) => {
   return null;
 };
 
-export default AiPlayer;
+export default AIPlayer;

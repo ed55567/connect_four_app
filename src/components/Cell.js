@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Oval from './Oval';
+import Oval from './oval';
 
 const Cell = ({ value, onClick }) => {
   const [isDropped, setIsDropped] = useState(false);

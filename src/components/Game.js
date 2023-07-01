@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Board from './Board';
 import Player from './Player';
-import AIPlayer from './AIPlayer';
+import AiPlayer from './Ai_Player';
 import NetworkPlayer from './NetworkPlayer';
 import { checkForWin, isBoardFull, createEmptyBoard } from '../utils/gameLogic';
 import './game.css'; // Import the CSS file for this component
