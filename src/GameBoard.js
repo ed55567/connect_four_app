@@ -7,13 +7,13 @@ const GameBoard = () => {
     const initializeBoard = () => {
         const newBoard = [];
         for (let row = 0; row < 6; row++) {
-            newBoard.push(null);
+            newBoard[row] = Array(7).fill(null);
         }
         return newBoard;
     };
 
     //Update the board state based on the player's move
-    const updateBoard = (row, column) => {
+    const updateBoard = (row, col) => {
         const newBoard = [...board];
         newBoard[row][col] = currentPlayer;
         setBoard(newBoard);
@@ -34,7 +34,7 @@ const GameBoard = () => {
          }
      }
 
-     //check columns
+     //check columns (top-left to bottom-right)
      for (let row = 0; row < 3; row++) {
             for (let col = 0; col < 7; col++) {
                 if (board[row][col] === player &&
@@ -47,8 +47,32 @@ const GameBoard = () => {
             }
         }
 
-        return false;
-    };
+        //check diagonals (top-left to bottom-right)
+        for (let row = 3; row < 6; row++) {
+            for (let col = 0; col < 4; col++) {
+                if (board[row][col] === player &&
+                    board[row - 1][col + 1] === player &&
+                    board[row - 2][col + 2] === player &&
+                    board[row - 3][col + 3] === player
+                ) {
+                    return true;
+                }
+            }
+        }
+
+        //check diagonals (bottom-left to top-right)
+        for (let row = 3; row < 6; row++) {
+            for (let col = 3; col < 7; col++) {
+                if (board[row][col] === player &&
+                    board[row - 1][col - 1] === player &&   
+                    board[row - 2][col - 2] === player &&
+                    board[row - 3][col - 3] === player
+                ) {   
+                
+                  return false;
+                }   
+        }
+    }  
 
     const currentPlayer = 'red';
 
@@ -63,7 +87,14 @@ const GameBoard = () => {
                         className="cell"
                         onClick={() => handleCellClick(rowIndex, colIndex)}
                         >
-                        {/* TODO: add the player's token to the cell */}
+                        {<div
+                            key={colIndex}
+                            className={`cell ${cell}`}
+                            onClick={() => handleCellClick(rowIndex, colIndex)}
+                            >
+                            {cell === 'red' && <div className="red-piece"></div>}
+                            {cell === 'yellow' && <div className="yellow-piece"></div>}
+                        </div>}
                      </div>
                     ))}
                 </div>
