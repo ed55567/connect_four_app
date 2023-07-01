@@ -1,14 +1,12 @@
 import React from 'react';
-import GameBoard from './GameBoard';
+import Game from './components/Game';
 
 const App = () => {
-    return (
-        <div className="App">
-          <h1>Connect Four</h1>
-          <GameBoard /> 
-        </div>  
-    );
+  return (
+    <div className="app">
+      <Game />
+    </div>
+  );
 };
-
 
 export default App;
