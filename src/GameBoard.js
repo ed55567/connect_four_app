@@ -47,9 +47,28 @@ const GameBoard = () => {
             }
         }
 
+        return false;
+    };
+
+    const currentPlayer = 'red';
+
     return (
         <div>
-            {/*TODO: Render the game board */}
+           <div className="board">
+            {board.map((row, rowIndex) => (
+                <div key={rowIndex} className="row">
+                    {row.map((cell, cellIndex) => (
+                        <div 
+                        key={cellIndex} 
+                        className="cell"
+                        onClick={() => handleCellClick(rowIndex, colIndex)}
+                        >
+                        {/* TODO: add the player's token to the cell */}
+                     </div>
+                    ))}
+                </div>
+            ))}
+           </div>
         </div>  
     );
 };
