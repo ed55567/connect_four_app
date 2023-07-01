@@ -14,13 +14,14 @@ const Game = () => {
   const handleCellClick = (columnIndex) => {
     if (!gameOver) {
       const updatedBoard = [...board];
+      let rowIndex;
       for (let i = board.length - 1; i >= 0; i--) {
         if (updatedBoard[i][columnIndex] === 0) {
           updatedBoard[i][columnIndex] = currentPlayer;
+          rowIndex = i;
           break;
         }
       }
-
       setBoard(updatedBoard);
 
       if (checkForWin(updatedBoard, currentPlayer)) {
@@ -32,6 +33,14 @@ const Game = () => {
       } else {
         setCurrentPlayer(currentPlayer === 1 ? 2 : 1);
       }
+
+      // Animate drop
+      const cells = document.querySelectorAll('.cell');
+      const cellIndex = rowIndex * updatedBoard[0].length + columnIndex;
+      cells[cellIndex].classList.add('dropped');
+      setTimeout(() => {
+        cells[cellIndex].classList.remove('dropped');
+      }, 500);
     }
   };
 

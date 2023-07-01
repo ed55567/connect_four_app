@@ -93,3 +93,23 @@ body {
     animation: fadeIn 0.5s ease;
   }
   
+
+  .cell {
+    /* Cell styles */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cell.dropped .oval-wrapper {
+    animation: dropAnimation 0.5s ease-in-out;
+  }
+  
+  @keyframes dropAnimation {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
