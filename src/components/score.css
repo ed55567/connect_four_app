@@ -1,0 +1,84 @@
+.box {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .box .group-wrapper {
+    border: 0px none;
+    height: 187px;
+    width: 141px;
+  }
+  
+  .box .group {
+    height: 187px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 141px;
+  }
+  
+  .box .overlap-group {
+    height: 190px;
+    left: -3px;
+    position: relative;
+    width: 147px;
+  }
+  
+  .box .rectangle {
+    background-color: #ffffff;
+    border: 3px solid;
+    border-color: #000000;
+    border-radius: 20px;
+    box-shadow: 0px 10px 0px #000000;
+    height: 166px;
+    left: 0;
+    position: absolute;
+    top: 24px;
+    width: 147px;
+  }
+  
+  .box .player-one {
+    height: 59px;
+    left: 47px;
+    position: absolute;
+    top: 0;
+    width: 54px;
+  }
+  
+  .box .div {
+    height: 97px;
+    left: 31px;
+    position: absolute;
+    top: 73px;
+    width: 86px;
+  }
+  
+  .box .text-wrapper {
+    color: #000000;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 20px;
+    font-weight: 700;
+    left: 1px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+  }
+  
+  .box .text-wrapper-2 {
+    color: #000000;
+    font-family: "Space Grotesk-Bold", Helvetica;
+    font-size: 56px;
+    font-weight: 700;
+    left: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 26px;
+  }
+  
