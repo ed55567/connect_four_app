@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Board from './Board';
 import Player from './Player';
-import AiPlayer from './Ai_Player';
-import NetworkPlayer from './NetworkPlayer';
+import Box from './Scoreboard'; // Import the Scoreboard component
 import { checkForWin, isBoardFull, createEmptyBoard } from '../utils/gameLogic';
 import './game.css'; // Import the CSS file for this component
 
@@ -23,7 +22,7 @@ const Game = () => {
         }
       }
       setBoard(updatedBoard);
-
+  
       if (checkForWin(updatedBoard, currentPlayer)) {
         setGameOver(true);
         alert(`Player ${currentPlayer} wins!`);
@@ -33,7 +32,7 @@ const Game = () => {
       } else {
         setCurrentPlayer(currentPlayer === 1 ? 2 : 1);
       }
-
+  
       // Animate drop
       const cells = document.querySelectorAll('.cell');
       const cellIndex = rowIndex * updatedBoard[0].length + columnIndex;
@@ -44,9 +43,10 @@ const Game = () => {
     }
   };
 
-  return (
+    return (
     <div className="game">
       <h1>Connect Four</h1>
+      <Box /> {/* Render the Scoreboard component */}
       <Board board={board} handleCellClick={handleCellClick} />
       {gameOver ? null : (
         <Player currentPlayer={currentPlayer} />
@@ -56,4 +56,3 @@ const Game = () => {
 };
 
 export default Game;
-

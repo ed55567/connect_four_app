@@ -1,18 +1,19 @@
-// Scoreboard.js
 import React from "react";
 import "./score.css";
 
-export const Box = () => {
+const Scoreboard = ({ player1Score }) => {
   return (
-    <div className="box">
-      <div className="group-wrapper">
-        <div className="group">
-          <div className="overlap-group">
-            <div className="rectangle" />
-            <img className="player-one" alt="Player one" src="player-one.svg" />
-            <div className="div">
-              <div className="text-wrapper">PLAYER 1</div>
-              <div className="text-wrapper-2">12</div>
+    <div className="scoreboard">
+      <div className="box">
+        <div className="group-wrapper">
+          <div className="group">
+            <div className="overlap-group">
+              <div className="rectangle" />
+              {/* <img className="player-one" alt="Player one" src="player-one.svg" /> */}
+              <div className="div">
+                <div className="text-wrapper">PLAYER 1</div>
+                <div className="text-wrapper-2">{player1Score}</div>
+              </div>
             </div>
           </div>
         </div>
@@ -21,4 +22,5 @@ export const Box = () => {
   );
 };
 
-export default Box;
+
+export default Scoreboard;
